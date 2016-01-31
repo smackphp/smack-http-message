@@ -6,7 +6,7 @@ interface ParsedRequestInterface
 {
 	public function getAttribute(string $key);
 
-	public function setAttribute(string $key, $value):;
+	public function setAttribute(string $key, $value);
 
 	public function getAttributes():array;
 
