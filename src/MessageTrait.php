@@ -21,7 +21,7 @@ trait MessageTrait
 
 	public function getHeader(string $header)
 	{
-		return $this->headers[$header] ?? false;
+		$this->has($header) ? $this->headers[$header] : false;
 	}
 	
 	public function setHeader(string $name, string $value)
@@ -38,6 +38,11 @@ trait MessageTrait
 	{
 		$this->headers = $headers;
 		return $this;
+	}
+
+	public function hasHeader($header)
+	{
+		return isset($this->headers[$header]);
 	}
 
 	public function getProtocolVersion():float
